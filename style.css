@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    box-sizing: border-box; /*width + padding + border*/
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ccc;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "h h"
+                         "n n"
+                         "a as"
+                         "f f";
+    width: 100%;
+}
+
+header {
+    grid-area: h;
+}
+header h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+nav {
+    grid-area: n;
+}
+nav ul {
+    padding: 10px;
+}
+nav ul li{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li a, nav ul li a:visited{
+    background-color: #ddd;
+    padding: 5px 15px 5px 15px;
+    margin: 2.5px;
+    border-radius: 10%;
+    border: 1.8px solid #ddd;
+    color: #222;
+    text-decoration: none;
+    font-size: 1em;
+    transition: 0.5s;
+}
+nav ul li a:hover, nav ul li a:active{
+    background-color: #ccc;
+}
+
+article {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+article .termek {
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "nev_ nev_" "img_ img_" "p_ p_" "button_ span_";
+}
+article .termek h2 {
+    grid-area: nev_;
+    margin: 0 0 5px 0;
+    font-size: 1em;
+}
+article .termek img {
+    grid-area: img_;
+    width: 100%;
+    border-radius: 10px;
+}
+article .termek p {
+    grid-area: p_;
+}
+article .termek button {
+    grid-area: button_;
+}
+article .termek span {
+    grid-area: span_;
+}
+
+aside {
+    grid-area: as;
+}
+
+footer {
+    grid-area: f;
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "h h"
+                             "n n"
+                             "a as"
+                             "f f";
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "h"
+                             "n"
+                             "a"
+                             "as"
+                             "f";
+    }
+  }
