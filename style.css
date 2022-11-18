@@ -95,10 +95,14 @@ article .termek h2 {
     margin: 0 0 5px 0;
     font-size: 1em;
 }
+
 article .termek img {
     grid-area: img_;
     width: 100%;
+    /*height: auto;*/
+    height: 200px;
     border-radius: 10px;
+    object-fit: cover;
 }
 article .termek p {
     grid-area: p_;
@@ -188,9 +192,9 @@ hr {
     main {
         grid-template-columns: 1fr;
         grid-template-areas: "h"
+                             "as"
                              "n"
                              "a"
-                             "as"
                              "f";
     }
     article {
